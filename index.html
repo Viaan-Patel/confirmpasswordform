@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Confirm Password Form</title>
+</head>
+
+<style>
+body{
+    background-color: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: arial;
+}
+h1{
+    color:purple;
+    font-family: arial;
+}
+div{
+    background-color: wheat;
+    border-radius: 10px;
+    padding:10px 15px;
+    width:300px;
+    box-shadow: 0 0 10px bisque;
+    margin:10px auto;
+}
+form{
+    display:flex;
+    flex-direction: column;
+}
+input{
+    padding:10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border:1px solid lightslategray;
+}
+button{
+    color:burlywood;
+    background-color: brown;
+    border-radius: 5px;
+    border:none;
+    padding:10px 15px;
+}
+</style>
+<body>
+<center>
+<div>
+<h1>CONFIRM PASSWORD FORM</h1>
+<form onsubmit="return validatForm()">
+<input type="email" id="email" placeholder="enter your email" required>
+<input type="password" id="pwd" placeholder="enter your password" required>
+<input type="password" id="confirmpwd" placeholder="confirm your password" required>
+<button type="submit">Log in</button>
+<p id="error"></p>
+</form>
+</div>
+</center>
+<script>
+function validatForm(){
+    let password = document.getElementById("pwd").value;
+    let confirmpwd = document.getElementById("confirmpwd").value;
+
+    if(password===confirmpwd){
+        document.getElementById("error").innerHTML = "login sucessfull";
+        document.getElementById("error").style.color = "green";
+    }
+    else{
+         document.getElementById("error").innerHTML = "error:passwords did not match";
+        document.getElementById("error").style.color = "red";
+        
+    }
+    return false;
+}
+
+
+
+</script>
+</body>
+</html>
